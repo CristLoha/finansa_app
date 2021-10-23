@@ -49,7 +49,7 @@ class SplashPage extends StatelessWidget {
             SizedBox(width: 15),
             CustomButton(
               title: 'Get Started',
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, '/home-page'),
               colorButton: primaryColor,
               textStyle:
                   whiteTextStyle.copyWith(fontWeight: medium, fontSize: 16),
