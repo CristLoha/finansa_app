@@ -1,4 +1,5 @@
 import 'package:finansa_app/shared/theme.dart';
+import 'package:finansa_app/shared/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -32,12 +33,39 @@ class SplashPage extends StatelessWidget {
       );
     }
 
+    Widget button() {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+        margin: EdgeInsets.only(top: 50, bottom: 75),
+        child: Row(
+          children: [
+            CustomButton(
+              title: 'Sign In',
+              onPressed: () {},
+              colorButton: buttonGreyColor,
+              textStyle:
+                  secondaryTextStyle.copyWith(fontWeight: medium, fontSize: 16),
+            ),
+            SizedBox(width: 15),
+            CustomButton(
+              title: 'Get Started',
+              onPressed: () {},
+              colorButton: primaryColor,
+              textStyle:
+                  whiteTextStyle.copyWith(fontWeight: medium, fontSize: 16),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
           children: [
             imageSplash(),
             title(),
+            button(),
           ],
         ),
       ),

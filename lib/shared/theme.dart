@@ -8,7 +8,8 @@ Color secondaryColor = Color(0xff38ABBE);
 Color backgroundColor1 = Color(0xffFFFFFF);
 Color backgroundColor2 = Color(0xffFAFAFA);
 Color primaryTextColor = Color(0xff111111);
-Color secondaryTextColor = Color(0xffB6B6B6);
+Color secondaryTextColor = Color(0xff6F6F94);
+Color buttonGreyColor = Color(0xffEDEDF3);
 Color transparentColor = Colors.transparent;
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
