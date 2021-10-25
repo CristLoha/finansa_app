@@ -1,4 +1,5 @@
 import 'package:finansa_app/shared/theme.dart';
+import 'package:finansa_app/shared/widgets/menus_custom.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -88,7 +89,60 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget cardMenus() {
+      return Container(
+        margin: EdgeInsets.only(top: 18),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      MenusCustom(
+                        iconMenus: 'assets/icon_payment.png',
+                        titleMenus: 'Top Up',
+                      ),
+                      MenusCustom(
+                        iconMenus: 'assets/icon_transfer.png',
+                        titleMenus: 'Transfer',
+                      ),
+                      MenusCustom(
+                        iconMenus: 'assets/icon_purchase.png',
+                        titleMenus: 'Bills',
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 18),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      MenusCustom(
+                        iconMenus: 'assets/icon_card_bank.png',
+                        titleMenus: 'Withdraw',
+                      ),
+                      MenusCustom(
+                        iconMenus: 'assets/icon_reward.png',
+                        titleMenus: 'Reward',
+                      ),
+                      MenusCustom(
+                        iconMenus: 'assets/icon_nearby.png',
+                        titleMenus: 'Nearby',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
+      backgroundColor: backgroundColor2,
       body: ListView(
         children: [
           Column(
@@ -97,6 +151,7 @@ class HomePage extends StatelessWidget {
               header(),
               balanceCard(),
               titleMenus(),
+              cardMenus(),
             ],
           )
         ],
