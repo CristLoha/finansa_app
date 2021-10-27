@@ -1,6 +1,5 @@
+import 'package:finansa_app/shared/theme.dart';
 import 'package:flutter/material.dart';
-
-import '../theme.dart';
 
 class WidgetBalanceCard extends StatelessWidget {
   final String currentBalance;

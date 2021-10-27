@@ -1,6 +1,6 @@
-import 'package:finansa_app/home_page.dart';
 import 'package:finansa_app/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

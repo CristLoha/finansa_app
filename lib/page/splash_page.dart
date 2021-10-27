@@ -1,5 +1,6 @@
 import 'package:finansa_app/shared/theme.dart';
-import 'package:finansa_app/shared/widgets/custom_button.dart';
+import 'package:finansa_app/widgets/custom_button.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {

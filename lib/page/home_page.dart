@@ -1,6 +1,7 @@
 import 'package:finansa_app/shared/theme.dart';
-import 'package:finansa_app/shared/widgets/menus_custom.dart';
-import 'package:finansa_app/shared/widgets/widget_balance_card.dart';
+import 'package:finansa_app/widgets/menus_custom.dart';
+import 'package:finansa_app/widgets/widget_balance_card.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
