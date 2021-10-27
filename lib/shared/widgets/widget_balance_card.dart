@@ -27,34 +27,32 @@ class WidgetBalanceCard extends StatelessWidget {
           ),
         ),
       ),
-      child: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Current Balance',
-              style: whiteTextStyle.copyWith(
-                fontSize: 13,
-                fontWeight: medium,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Current Balance',
+            style: whiteTextStyle.copyWith(
+              fontSize: 13,
+              fontWeight: medium,
             ),
-            Text(
-              currentBalance,
-              style: whiteTextStyle.copyWith(
-                fontSize: 28,
-                fontWeight: semiBold,
-              ),
+          ),
+          Text(
+            currentBalance,
+            style: whiteTextStyle.copyWith(
+              fontSize: 28,
+              fontWeight: semiBold,
             ),
-            SizedBox(height: 40),
-            Text(
-              '••••  ••••  ••••  3901',
-              style: whiteTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: regular,
-              ),
+          ),
+          SizedBox(height: 40),
+          Text(
+            '••••  ••••  ••••  3901',
+            style: whiteTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: regular,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

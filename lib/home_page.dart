@@ -36,26 +36,22 @@ class HomePage extends StatelessWidget {
 
     Widget balanceCard() {
       return Container(
+        margin: EdgeInsets.only(top: 30),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Column(
+          child: Row(
             children: [
-              SizedBox(height: 30),
-              Row(
-                children: [
-                  SizedBox(width: defaultMargin),
-                  WidgetBalanceCard(
-                    currentBalance: '\$11,500,209',
-                    image: 'assets/image_card1.png',
-                  ),
-                  SizedBox(width: 20),
-                  WidgetBalanceCard(
-                    currentBalance: '\$12,480,2099',
-                    image: 'assets/image_card2.png',
-                  ),
-                  SizedBox(width: defaultMargin),
-                ],
+              SizedBox(width: defaultMargin),
+              WidgetBalanceCard(
+                currentBalance: '\$11,500,209',
+                image: 'assets/image_card1.png',
               ),
+              SizedBox(width: 20),
+              WidgetBalanceCard(
+                currentBalance: '\$12,480,2099',
+                image: 'assets/image_card2.png',
+              ),
+              SizedBox(width: defaultMargin),
             ],
           ),
         ),
@@ -75,67 +71,58 @@ class HomePage extends StatelessWidget {
     Widget cardMenus() {
       return Container(
         margin: EdgeInsets.only(top: 18),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MenusCustom(
-                        iconMenus: 'assets/icon_payment.png',
-                        titleMenus: 'Top Up',
-                      ),
-                      MenusCustom(
-                        iconMenus: 'assets/icon_transfer.png',
-                        titleMenus: 'Transfer',
-                      ),
-                      MenusCustom(
-                        iconMenus: 'assets/icon_purchase.png',
-                        titleMenus: 'Bills',
-                      ),
-                    ],
+                  MenusCustom(
+                    iconMenus: 'assets/icon_payment.png',
+                    titleMenus: 'Top Up',
                   ),
-                  SizedBox(height: 18),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MenusCustom(
-                        iconMenus: 'assets/icon_card_bank.png',
-                        titleMenus: 'Withdraw',
-                      ),
-                      MenusCustom(
-                        iconMenus: 'assets/icon_reward.png',
-                        titleMenus: 'Reward',
-                      ),
-                      MenusCustom(
-                        iconMenus: 'assets/icon_nearby.png',
-                        titleMenus: 'Nearby',
-                      ),
-                    ],
+                  MenusCustom(
+                    iconMenus: 'assets/icon_transfer.png',
+                    titleMenus: 'Transfer',
+                  ),
+                  MenusCustom(
+                    iconMenus: 'assets/icon_purchase.png',
+                    titleMenus: 'Bills',
                   ),
                 ],
               ),
-            ),
-          ],
+              SizedBox(height: 18),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MenusCustom(
+                    iconMenus: 'assets/icon_card_bank.png',
+                    titleMenus: 'Withdraw',
+                  ),
+                  MenusCustom(
+                    iconMenus: 'assets/icon_reward.png',
+                    titleMenus: 'Reward',
+                  ),
+                  MenusCustom(
+                    iconMenus: 'assets/icon_nearby.png',
+                    titleMenus: 'Nearby',
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       );
     }
 
     return ListView(
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            header(),
-            balanceCard(),
-            titleMenus(),
-            cardMenus(),
-            SizedBox(height: 111),
-          ],
-        )
+        header(),
+        balanceCard(),
+        titleMenus(),
+        cardMenus(),
+        SizedBox(height: 111),
       ],
     );
   }
