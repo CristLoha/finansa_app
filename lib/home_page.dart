@@ -1,5 +1,6 @@
 import 'package:finansa_app/shared/theme.dart';
 import 'package:finansa_app/shared/widgets/menus_custom.dart';
+import 'package:finansa_app/shared/widgets/widget_balance_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -35,43 +36,25 @@ class HomePage extends StatelessWidget {
 
     Widget balanceCard() {
       return Container(
-        margin: EdgeInsets.only(top: 30, left: defaultMargin),
-        width: 300,
-        height: 190,
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
-          vertical: 30,
-        ),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/image_card1.png'),
-          ),
-        ),
-        child: Expanded(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Current Balance',
-                style: whiteTextStyle.copyWith(
-                  fontSize: 13,
-                  fontWeight: medium,
-                ),
-              ),
-              Text(
-                '\$12,480,209',
-                style: whiteTextStyle.copyWith(
-                  fontSize: 28,
-                  fontWeight: semiBold,
-                ),
-              ),
-              SizedBox(height: 40),
-              Text(
-                '••••  ••••  ••••  3901',
-                style: whiteTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: regular,
-                ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  SizedBox(width: defaultMargin),
+                  WidgetBalanceCard(
+                    currentBalance: '\$11,500,209',
+                    image: 'assets/image_card1.png',
+                  ),
+                  SizedBox(width: 20),
+                  WidgetBalanceCard(
+                    currentBalance: '\$12,480,2099',
+                    image: 'assets/image_card2.png',
+                  ),
+                  SizedBox(width: defaultMargin),
+                ],
               ),
             ],
           ),
@@ -141,21 +124,19 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      backgroundColor: backgroundColor2,
-      body: ListView(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(),
-              balanceCard(),
-              titleMenus(),
-              cardMenus(),
-            ],
-          )
-        ],
-      ),
+    return ListView(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            header(),
+            balanceCard(),
+            titleMenus(),
+            cardMenus(),
+            SizedBox(height: 111),
+          ],
+        )
+      ],
     );
   }
 }

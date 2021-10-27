@@ -1,8 +1,16 @@
+import 'package:finansa_app/home_page.dart';
 import 'package:finansa_app/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +32,12 @@ class MainPage extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          currentIndex: currentIndex,
+          onTap: (value) {
+            setState(() {
+              currentIndex = value;
+            });
+          },
           items: [
             BottomNavigationBarItem(
                 icon: Container(
@@ -31,6 +45,7 @@ class MainPage extends StatelessWidget {
                   child: Image.asset(
                     'assets/fi_home.png',
                     width: 24,
+                    color: currentIndex == 0 ? primaryColor : primaryTextColor,
                   ),
                 ),
                 label: ''),
@@ -40,6 +55,7 @@ class MainPage extends StatelessWidget {
                   child: Image.asset(
                     'assets/fi_calendar.png',
                     width: 24,
+                    color: currentIndex == 1 ? primaryColor : primaryTextColor,
                   ),
                 ),
                 label: ''),
@@ -49,6 +65,7 @@ class MainPage extends StatelessWidget {
                   child: Image.asset(
                     'assets/fi_briefcase.png',
                     width: 24,
+                    color: currentIndex == 2 ? primaryColor : primaryTextColor,
                   ),
                 ),
                 label: ''),
@@ -58,6 +75,7 @@ class MainPage extends StatelessWidget {
                   child: Image.asset(
                     'assets/fi_settings.png',
                     width: 24,
+                    color: currentIndex == 3 ? primaryColor : primaryTextColor,
                   ),
                 ),
                 label: ''),
@@ -66,11 +84,21 @@ class MainPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      switch (currentIndex) {
+        case 0:
+          return HomePage();
+        default:
+          return HomePage();
+      }
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor2,
       floatingActionButton: carButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: customBottomNav(),
+      body: content(),
     );
   }
 }
